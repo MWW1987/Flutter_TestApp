@@ -16,12 +16,23 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('برنامه تستی من'),
-      ),
-      body: Center(
-        child: Text('صفحه اصلی'),
-      ),
-    );
+        appBar: AppBar(
+          title: Text('برنامه تستی من'),
+        ),
+        body: Column(
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.blue,
+                child: Text('نمودار کیری'),
+                elevation: 5,
+              ),
+            ),
+            Card(
+              child: Text('لیست کیری'),
+            )
+          ],
+        ));
   }
 }
