@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-
-import './widgets/transaction_list.dart';
-import './widgets/new_transaction.dart';
-
-
+import './widgets/user_transaction.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,7 +14,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +23,8 @@ class MyHomePage extends StatelessWidget {
             'برنامه تستی من',
           ),
         ),
-        body: Column(
+        body: SingleChildScrollView(
+            child: Column(
           // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
@@ -43,9 +39,8 @@ class MyHomePage extends StatelessWidget {
                 elevation: 5,
               ),
             ),
-            NewTransaction(),
-            TransactionList(),
+            UserTransaction(),
           ],
-        ));
+        )));
   }
 }
