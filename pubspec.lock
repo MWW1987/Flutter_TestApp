@@ -81,6 +81,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.4"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.16.1"
+  jalali_calendar:
+    dependency: "direct main"
+    description:
+      name: jalali_calendar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3+1"
+  jiffy:
+    dependency: transitive
+    description:
+      name: jiffy
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.0"
   matcher:
     dependency: transitive
     description:
@@ -109,6 +130,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0+1"
+  persian_date:
+    dependency: transitive
+    description:
+      name: persian_date
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.5"
   petitparser:
     dependency: transitive
     description:
@@ -192,4 +220,5 @@ packages:
     source: hosted
     version: "3.5.0"
 sdks:
-  dart: ">=2.4.0 <3.0.0"
+  dart: ">=2.5.0 <3.0.0"
+  flutter: ">=0.1.2 <2.0.0"

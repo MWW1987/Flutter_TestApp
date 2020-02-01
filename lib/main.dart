@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:persian_date/persian_date.dart';
+
 import './transaction.dart';
 
 void main() => runApp(MyApp());
@@ -19,6 +22,13 @@ class MyHomePage extends StatelessWidget {
     Transaction(id: '2', title: 'دیلدو', amount: 225.5, date: DateTime.now())
   ];
 
+  String toPersian(DateTime date, String format) {
+    PersianDate persianDate =
+        new PersianDate(format: format, gregorian: date.toString());
+    // var finalDate = persianDate.year.toString() +'/' + persianDate.monthname + '/' + persianDate.day.toString();
+    return persianDate.getDate;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +39,7 @@ class MyHomePage extends StatelessWidget {
           ),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
@@ -41,6 +51,24 @@ class MyHomePage extends StatelessWidget {
                   textAlign: TextAlign.end,
                 ),
                 elevation: 5,
+              ),
+            ),
+            Card(
+              elevation: 5,
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: <Widget>[
+                    TextField(
+                     textAlign: TextAlign.right,
+                      decoration: InputDecoration(labelText: 'عنوان', ), 
+                    ),
+                    TextField(
+                      textAlign: TextAlign.right,
+                      decoration: InputDecoration(labelText: 'قیمت'), 
+                    ),
+                  ],
+                ),
               ),
             ),
             Column(
@@ -60,7 +88,7 @@ class MyHomePage extends StatelessWidget {
                         ),
                         padding: EdgeInsets.all(10),
                         child: Text(
-                          tx.amount.toString(),
+                          tx.amount.toString() + ' ت',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -79,7 +107,7 @@ class MyHomePage extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            tx.date.toString(),
+                            toPersian(tx.date, 'yyyy.MM.dd'),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
